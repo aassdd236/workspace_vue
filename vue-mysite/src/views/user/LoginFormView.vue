@@ -7,14 +7,13 @@
                     <a href="">MySite</a>
                 </h1>
 
-                <!-- 
-                    <ul>
-                        <li>황일영 님 안녕하세요^^</li>
-                        <li><a href="" class="btn_s">로그아웃</a></li>
-                        <li><a href="" class="btn_s">회원정보수정</a></li>
-                    </ul>
-                -->
-                <ul>
+                <ul v-if="this.$store.state.authUser != null">
+                    <li>{{this.$store.state.authUser.name}}님 안녕하세요^^</li>
+                    <li><button v-on:click="logout" type="button" class="btn_s">로그아웃</button></li>
+                    <li><a href="" class="btn_s">회원정보수정</a></li>
+                </ul>
+               
+                <ul v-if="this.$store.state.authUser == null">
                     <li><a href="" class="btn_s">로그인</a></li>
                     <li><a href="" class="btn_s">회원가입</a></li>
                 </ul>
@@ -137,21 +136,29 @@ export default {
                 console.log(response); //수신데이타
                 console.log(response.data);
 
-                //로그인 사용자 정보
-                let authUser = response.data;
+                if(response.data.result == "success"){
+                     //로그인 사용자 정보
+                    let authUser = response.data.apiData;
+
+                    //token 응답문서의 헤더에 있음
+                    const token = response.headers.authorization.split(" ")[1];
+                    
+                    //vuex에 저장
+                    this.$store.commit("setAuthUser", authUser);
+                    this.$store.commit("setToken", token);
+
+                    console.log(authUser);
+                    console.log(token);
+
+                    this.$router.push("/");
+                }else{
+                    console.log(response.data.message);
+                    alert("아이디 패스워드 확인하기");
+                }
+
                
-                //token 응답문서의 헤더에 있음
-                const token = response.headers.authorization.split(" ")[1];
+               
                 
-                //vuex에 저장
-                this.$store.commit("setAuthUser", authUser);
-                this.$store.commit("setToken", token);
-
-                console.log(authUser);
-                console.log(token);
-
-                this.$router.push("/");
-
             }).catch(error => {
                 console.log(error);
             });

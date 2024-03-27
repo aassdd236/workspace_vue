@@ -4,7 +4,7 @@ import createPersistedState from 'vuex-persistedstate';
 export default createStore({
     state() {
         return {
-            authUser: {no: 1, name: ""},
+            authUser: null,
             token: null
         };
     },

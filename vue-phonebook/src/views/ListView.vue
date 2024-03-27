@@ -28,7 +28,7 @@
                     <td>{{ personVo.company }}</td>
                     <td>
                         <button type="button">삭제하기</button>&nbsp;&nbsp; <!--공백메시지-->
-                        <a href="">[수정폼이동]</a>
+                        <router-link to="/">[수정폼이동]</router-link>
                     </td>
                 </tr>
             </tbody>

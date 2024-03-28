@@ -4,6 +4,7 @@ import LoginFormView from '@/views/user/LoginFormView.vue'
 import ModifyFormView from '@/views/user/ModifyFormView.vue'
 import AttachFormView from '@/views/attach/AttachFormView.vue'
 import AttachResultView from '@/views/attach/AttachResultView.vue'
+import ListView from '@/views/gallery/ListView.vue'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/attach/result',
     name: '/attach/result',
     component: AttachResultView
+  },
+  {
+    path: '/gallery/list',
+    name: '/gallery/list',
+    component: ListView
   }
 ]
 

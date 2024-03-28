@@ -60,7 +60,7 @@ export default {
                 responseType: 'json' //수신타입
             }).then(response => {
                 console.log(response); //수신데이타
-                this.pList = response.data
+                this.pList = response.data;
             }).catch(error => {
                 console.log(error);
             });

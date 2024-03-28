@@ -28,14 +28,14 @@
                     <td>{{ personVo.company }}</td>
                     <td>
                         <button type="button">삭제하기</button>&nbsp;&nbsp; <!--공백메시지-->
-                        <router-link to="/">[수정폼이동]</router-link>
+                        <router-link v-bind:to="`/modifyform/${personVo.personId}`">[수정폼이동]</router-link>
                     </td>
                 </tr>
             </tbody>
         </table>
         <br>
 
-        <a href="">등록폼 이동</a>
+        <router-link to="/write">등록폼 이동</router-link>
 
 
     </div>
@@ -50,6 +50,7 @@ export default {
         return {
             pList: [],
             personVo: {
+                personId: "",
                 name: "",
                 hp: "",
                 company: ""

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+#gallery p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#gallery ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#gallery .view {
+    width: calc(33.33% - 8px);
+    height: 220px;
+    margin: 5px 0px 0px 3px;
+    float: left;
+}
+
+#gallery .img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+#gallery .imgWriter {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 5px;
+    text-align: center;
+}

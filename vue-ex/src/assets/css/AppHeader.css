@@ -1,0 +1,14 @@
+#logo {
+    padding: 45px 0 0 0;
+    display: inline-block;
+}
+
+#header{
+    background-color: #bfbfbf;
+    background-image: url("@/assets/img/movie_bg.png");
+    background-size: 100%;
+    height: 150px;
+    padding: 10px;
+    
+}
+

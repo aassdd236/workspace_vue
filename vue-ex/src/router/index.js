@@ -1,12 +1,43 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ListView from '../views/ListView.vue'
+import MainView from '@/views/main/MainView.vue'
+import FindView from '@/views/find/FindView.vue'
+import FoodStoreView from '@/views/foodstore/FoodStoreView.vue'
+import TicketView from '@/views/ticket/TicketView.vue'
+import PaymentCheckView from '@/views/payment/PaymentCheckView.vue'
+import AttachView from '@/views/foodstore/AttachView.vue'
 
 const routes = [
   {
-    path: '/list',
-    name: 'list',
-    component: ListView
+    path: '/',
+    name: '/',
+    component: MainView
   },
+  {
+    path: '/find/findform',
+    name: '/find/findform',
+    component: FindView
+  },
+  {
+    path: '/foodstore/foodform',
+    name: '/foodstore/foodform',
+    component: FoodStoreView
+  },
+  {
+    path: '/ticket/ticketform',
+    name: '/ticket/ticketform',
+    component: TicketView
+  },
+  
+  {
+    path: '/payment/paymentform',
+    name: '/payment/paymentform',
+    component: PaymentCheckView
+  },
+  {
+    path: '/foodstore/attach',
+    name: '/foodstore/attach',
+    component: AttachView
+  }
 ]
 
 const router = createRouter({

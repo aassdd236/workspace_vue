@@ -30,7 +30,7 @@ const routes = [
   
   {
     path: '/payment/paymentform',
-    name: '/payment/paymentform',
+    name: 'PaymentCheckView',
     component: PaymentCheckView
   },
   {

@@ -34,7 +34,7 @@
                         </p>
                         <div class="cartLast">
                             <p>총 {{ getTotalItemsCount }}개의 상품이 선택됨 <br> 총 가격: {{ getTotalPrice }}원</p>
-                            <button class="pay">결제하기</button>
+                            <button class="pay" @click="goToPayment">결제하기</button>
                         </div>
                     </div>
 
@@ -137,6 +137,13 @@ export default {
                     }
                 }
             }
+        },
+        goToPayment() {
+            this.$router.push({
+                name: 'PaymentCheckView',
+                query: { totalPrice: this.getTotalPrice }
+            })
+
         }
     },
     created() {

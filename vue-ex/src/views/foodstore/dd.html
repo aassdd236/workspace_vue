@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="Ko">
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        .ticket {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border: 3px solid #ff4d4d;
+            /* 테두리 추가 */
+            border-radius: 10px;
+            height: 550px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .order-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #000000;
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        .number {
+            font-size: 60px;
+            font-weight: bold;
+            color: #000000;
+            border-bottom: 2px solid #ff4d4d;
+            padding-top: 10px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .money {
+            font-size: 20px;
+            color: #000000;
+            padding-top: 10px;
+            text-align: center;
+            padding-bottom: 5px;
+        }
+
+        .moneyList {
+            font-size: 15px;
+            color: #000000;
+            padding-top: 10px;
+            border-bottom: 2px solid #ff4d4d;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .point {
+            font-size: 15px;
+            color: #000000;
+            padding-top: 10px;
+            text-align: left;
+            padding-bottom: 5px;
+        }
+
+        .barcode {
+            position: absolute;
+            bottom: 190px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ticket">
+        <div class="order-number"> 주문 <br> 번호</div>
+        <div class="number"> 68 </div>
+        <div class="money">
+            [결제 내역]
+        </div>
+        <div class="moneyList">
+            음식 목록 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6000원
+        </div>
+        <div class="point">
+            이*슬 님!
+            <br>
+            사용 가능 포인트 0점
+        </div>
+
+        <!-- 바코드 이미지 추가 -->
+        <img src="../../assets/qrimages.png" class="barcode">
+
+    </div>
+</body>
+
+</html>

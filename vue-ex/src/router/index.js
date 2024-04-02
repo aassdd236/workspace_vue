@@ -4,7 +4,7 @@ import FindView from '@/views/find/FindView.vue'
 import FoodStoreView from '@/views/foodstore/FoodStoreView.vue'
 import TicketView from '@/views/ticket/TicketView.vue'
 import PaymentCheckView from '@/views/payment/PaymentCheckView.vue'
-import AttachView from '@/views/foodstore/AttachView.vue'
+import MoviePosterView from '@/views/ticket/MoviePosterView.vue'
 
 const routes = [
   {
@@ -34,10 +34,11 @@ const routes = [
     component: PaymentCheckView
   },
   {
-    path: '/foodstore/attach',
-    name: '/foodstore/attach',
-    component: AttachView
+    path: '/ticket/poster',
+    name: '/ticket/poster',
+    component: MoviePosterView
   }
+  
 ]
 
 const router = createRouter({

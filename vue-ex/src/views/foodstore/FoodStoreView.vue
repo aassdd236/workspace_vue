@@ -41,6 +41,8 @@
 
 
                     <div id="clearfix"></div>
+                    
+                    
 
                 </div>
                 <!-- //content  -->
@@ -94,7 +96,7 @@ export default {
         getList() {
             axios({
                 method: 'get',
-                url: 'http://localhost:9000/api/list',
+                url: 'http://localhost:9000/api/food/list',
                 headers: { "Content-Type": "application/json; charset=utf-8" },
 
                 responseType: 'json'
@@ -139,11 +141,9 @@ export default {
             }
         },
         goToPayment() {
-            this.$router.push({
-                name: 'PaymentCheckView',
-                query: { totalPrice: this.getTotalPrice }
-            })
-
+            this.$router.push({ name: 'PaymentCheckView',
+            query: { totalPrice: this.getTotalPrice } })
+            
         }
     },
     created() {

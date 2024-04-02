@@ -37,7 +37,7 @@ export default {
 
             axios({
                 method: 'post', // put, get, delete                   
-                url: 'http://localhost:9000/api/foodAttach',
+                url: 'http://localhost:9000/api/movie/attach',
                 headers: {"Content-Type": "multipart/form-data"}, //전송타입
                 //params: guestbookVo, //get방식 파라미터로 값이 전달
                 data: formData, //Json으로 보내는 거 아님

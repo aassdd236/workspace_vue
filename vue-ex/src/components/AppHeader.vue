@@ -8,6 +8,11 @@
             
         </div>
         <!-- //header -->
+        <nav id="nav">
+            <router-link to="/">
+                <img id="home" src="@/assets/img/home_bt.png" alt="home" width="50px" />
+            </router-link>
+        </nav>
     </div> 
 </template>
 <script>

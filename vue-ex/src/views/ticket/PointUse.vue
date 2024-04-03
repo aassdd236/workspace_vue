@@ -4,16 +4,28 @@
             <AppHeader />
             <div id="app">
                 <div id="input-container">
-                    <input type="text" v-model="phoneNumber" placeholder="010-0000-0000">
-                    <!--
-                <input type="text" v-model="dateInput" placeholder="YYYYMMDD">
-            -->
-                    <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
-                        <FindContentView></FindContentView>
-                    </ModalView>
-                    <button id="search-button" @click="isModalViewed=true">핸드폰번호조회</button>
+                    <div class="clearfix"></div>
+                    <div id="point-title">
+                        <h1>포인트사용</h1>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div id="pointInfo">
+                        <div id="pointInput">
+                            <div id="check-hp">
+                                <input type="text" v-model="phoneNumber" placeholder="010-0000-0000">
+                            </div>
+                            <div id="birth">
+                                <input type="text" v-model="dateInput" placeholder="YYYYMMDD">
+                            </div>
+                        </div>
+                        <div id="check-btn">
+                            <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
+                                <PointCheckContentView></PointCheckContentView>
+                            </ModalView>
+                            <button id="check-button" @click="isModalViewed=true">포인트조회</button>
+                        </div>
+                    </div>
                 </div>
-
                 <div class="dial-container">
                     <div class="dial-button" @click="appendNumber(1)">1</div>
                     <div class="dial-button" @click="appendNumber(2)">2</div>
@@ -33,7 +45,7 @@
                 </div>
 
                 <div>
-                    <router-link to="/" id="return-button">돌아가기</router-link>
+                    <router-link to="/ticket/choosepoint" id="return-button">돌아가기</router-link>
                 </div>
             </div>
             <AppFooter />
@@ -42,20 +54,19 @@
 </template>
 
 <script>
-import "@/assets/css/FindView.css";
+import "@/assets/css/PointUse.css";
 import AppHeader from "@/components/AppHeader.vue"
 import AppFooter from "@/components/AppFooter.vue"
 import ModalView from "@/components/ModalView.vue";
-import FindContentView from "@/components/FindContentView.vue";
-import axios from 'axios';
+import PointCheckContentView from "@/components/PointCheckContentView.vue";
 
 export default {
-    name: "FindView",
+    name: "PointUse",
     components: {
         AppHeader,
         AppFooter,
         ModalView,
-        FindContentView,
+        PointCheckContentView,
     },
     data() {
         return {
@@ -66,24 +77,6 @@ export default {
         };
     },
     methods: {
-        getList() {
-            console.log("데이터 가져오기");
-
-            axios({
-                method: 'get', // put, post, delete                   
-                url: 'http://localhost:9000/api/movie',
-                headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
-                //params: guestbookVo, //get방식 파라미터로 값이 전달
-                //data: guestbookVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
-
-                responseType: 'json' //수신타입
-            }).then(response => {
-                console.log(response); //수신데이타
-
-            }).catch(error => {
-                console.log(error);
-            });
-        },
         appendNumber(num) {
             if (this.phoneNumber.length < 11) {
                 this.phoneNumber += num;
@@ -100,11 +93,10 @@ export default {
         },
         clearPhoneNumberMethod() {
             this.phoneNumber = ''; // 휴대폰 번호를 초기화합니다.
+            this.dateInput = ''; // 휴대폰 번호를 초기화합니다.
         },
     },
     created() {
-        // 컴포넌트가 생성될 때 데이터를 가져오도록 설정
-        this.getList();
     }
 };
 </script>

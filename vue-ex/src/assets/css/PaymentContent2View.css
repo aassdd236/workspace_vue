@@ -1,0 +1,81 @@
+h1 {
+    text-align: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+.ticket {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border: 3px solid #ff4d4d;
+    /* 테두리 추가 */
+    border-radius: 10px;
+    height: 550px;
+    text-align: center;
+    margin: 0 auto; /* 수평 가운데 정렬 */
+    position: relative; /* 바코드 이미지의 위치를 조정하기 위해 position: relative; 추가 */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.order-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.number {
+    font-size: 60px;
+    font-weight: bold;
+    color: #000000;
+    border-bottom: 2px solid #ff4d4d;
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.money {
+    font-size: 20px;
+    color: #000000;
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.moneyList {
+    font-size: 15px;
+    color: #000000;
+    padding-top: 10px;
+    border-bottom: 2px solid #ff4d4d;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.point {
+    font-size: 15px;
+    color: #000000;
+    padding-top: 10px;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.barcode {
+    position: absolute;
+    bottom: 20px; /* 원하는 위치로 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+}

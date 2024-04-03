@@ -46,13 +46,17 @@
                             <p>청소년 {{ youthCount }}명 {{ youthCount * 10000 }}원</p>
                             <p>최종 결제 금액: {{ adultCount * 15000 + youthCount * 10000 }}원</p>
                             <br><br>
-                            <router-link id="seatpay-btn" to="/payment/paymentform"
+                            <router-link id="seatpay-btn" to="/ticket/choosepoint"
                                 :disabled="!seatSelect">결제</router-link>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+
     </div>
 </template>
 
@@ -106,7 +110,7 @@ export default {
             const groups = [];
             const seatsPerGroup = 8;
             for (let i = 0; i < this.seats.length; i += seatsPerGroup) {
-                groups.push(this.seats.slice(i, i + seatsPerGroup));
+                groups.push(this.seats.slice(i, i + seatsPerGroup)); /* 배열을 새롭게 만들어 추가 */
             }
             return groups;
         },
@@ -128,19 +132,11 @@ export default {
                 seat.selected = false;
             }
         },
-        releaseRecentSeats(count) { /* 인원수 줄일 때 체크표시 풀기 */
-            const selectedSeats = this.seats.filter(seat => seat.selected);
-            const releaseCount = Math.min(count, selectedSeats.length);
-            for (let i = 0; i < releaseCount; i++) {
-                selectedSeats[selectedSeats.length - 1 - i].selected = false;
-            }
-        },
         plusAdult() {
             this.adultCount++;
         },
         minusAdult() {
             if (this.adultCount > 0) {
-                this.releaseRecentSeats(1);
                 this.adultCount--;
             }
         },
@@ -149,10 +145,9 @@ export default {
         },
         minusYouth() {
             if (this.youthCount > 0) {
-                this.releaseRecentSeats(1);
                 this.youthCount--;
             }
         }
     }
-};
+}
 </script>

@@ -81,7 +81,7 @@ import "@/assets/css/TicketView.css";
 import AppHeader from "@/components/AppHeader.vue";
 import AppFooter from "@/components/AppFooter.vue";
 import ModalView from "@/components/ModalView.vue";
-import SeatContentView02 from "@/components/SeatContentView02.vue";
+import SeatContentView from "@/components/SeatContentView.vue";
 import axios from 'axios';
 
 export default {
@@ -90,7 +90,7 @@ export default {
       AppFooter,
       AppHeader,
       ModalView,
-      SeatContentView02
+      SeatContentView
   },
   data() {
       return {

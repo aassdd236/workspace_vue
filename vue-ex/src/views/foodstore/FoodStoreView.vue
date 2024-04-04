@@ -73,8 +73,8 @@ export default {
     data() {
         return {
             foodList: [],
-            cartItems: []
-
+            cartItems: [],
+            cartVo: {}
         };
     },
     computed: {
@@ -143,14 +143,20 @@ export default {
             }
         },
         goToPayment() {
-            const totalPrice = this.getTotalPrice;
-            const cartItems = JSON.stringify(this.cartItems);
-
+            let totalPrice = this.getTotalPrice;
+            let cartItems = this.cartItems.map(item => {
+                return {
+                    f_no: item.f_no,
+                    count: item.count
+                };
+            });
+            console.log("dddddddddddddd",cartItems)
             this.$store.commit('setTotalPrice', totalPrice);
             this.$store.commit('setCartItems', cartItems);
-            this.$store.commit('setPlusPoint', totalPrice*0.05);
-            this.$router.push({ name: 'ChoosePoint2View'});
+            this.$store.commit('setPlusPoint', totalPrice * 0.05);
+            this.$router.push({ name: 'ChoosePoint2View' });
         }
+
     },
     created() {
         this.getList();

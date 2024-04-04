@@ -63,28 +63,35 @@ export default {
     data() {
         return {
             isModalViewed: false,
+            
         };
     },
     methods: {
         processPayment() {
             this.suc();
             this.point();
+            
         },
         suc() {
+            this.isModalViewed=true;
+            console.log("우웩");
+            let pointVo = {
+                orderItemList: this.$store.state.cartItems,
+                phoneNumber: this.$store.state.phoneNumber
+            };
+
+            console.log(pointVo);
+
             this.isModalViewed = true;
             axios({
                 method: 'post',
                 url: 'http://localhost:9000/api/food/order',
                 headers: { "Content-Type": "application/json; charset=utf-8" },
-                data: {
-                    cartItems: this.cartItems,
-                    phoneNumber: this.phoneNumber
-                },
+                data: pointVo,
                 responseType: 'json'
+            }).then(response => {
+                console.log(response.data);
             })
-                .then(response => {
-                    console.log(response.data);
-                })
                 .catch(error => {
                     console.error(error);
                 });

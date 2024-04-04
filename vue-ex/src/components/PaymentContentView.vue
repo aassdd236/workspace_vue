@@ -6,7 +6,7 @@
         <h1>결제 완료</h1>
         <div class="ticket">
           <div class="order-number"> 주문 <br> 번호</div>
-          <div class="number"> 68 </div>
+          <div class="number"> {{ recList.f_r_no }} </div>
           <div class="money">
             [결제 내역]
           </div>
@@ -15,9 +15,9 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6000원
           </div>
           <div class="point">
-            이*슬 님!
+            {{ recList.user_name }} 님!
             <br>
-            사용 가능 포인트 0점
+            사용 가능 포인트 {{ recList.user_point }} 점
           </div>
 
           <!-- 바코드 이미지 추가 -->
@@ -33,6 +33,7 @@
 
 
 <script>
+import axios from 'axios';
 import "@/assets/css/PaymentContent2View.css";
 
 export default {
@@ -40,7 +41,7 @@ export default {
   components: {},
   data() {
     return {
-
+      recList: []
     };
   },
   methods: {
@@ -48,8 +49,23 @@ export default {
     closePayModal() {
       console.log("클릭");
     },
+    getList() {
+            axios({
+                method: 'get',
+                url: 'http://localhost:9000/api/food/rec',
+                headers: { "Content-Type": "application/json; charset=utf-8" },
+
+                responseType: 'json'
+            }).then(response => {
+                this.recList = response.data.apiData;
+                console.log(this.recList);
+            }).catch(error => {
+                console.log(error);
+            });
+        }
   },
   created() {
+    this.getList();
   }
 };
 </script>

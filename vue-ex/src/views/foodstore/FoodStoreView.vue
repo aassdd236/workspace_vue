@@ -147,7 +147,7 @@ export default {
             let cartItems = this.cartItems.map(item => {
                 return {
                     f_no: item.f_no,
-                    count: item.count
+                    f_count: item.count
                 };
             });
             console.log("dddddddddddddd",cartItems)

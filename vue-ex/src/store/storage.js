@@ -34,5 +34,11 @@ export default createStore({
         setUsePoint(state, payload) { /* PointUse2 기존 포인트  */
             state.usePoint = payload;
         },
+        setMoney(state, payload) { /* PointCheckContent2View 사용할 포인트  */
+            state.money = payload;
+        },
+        setPointEx(state, payload) { /* PointCheckContent2View 사용후 남은 포인트  */
+            state.pointEx = payload;
+        },
     }
 });

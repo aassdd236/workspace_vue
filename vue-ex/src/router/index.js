@@ -16,6 +16,7 @@ import EndPoint2View from '@/views/foodstore/EndPoint2View.vue'
 import PlusPoint2View from '@/views/foodstore/PlusPoint2View.vue'
 import PointUse2 from '@/views/foodstore/PointUse2.vue'
 import PaymentCheckView2 from '@/views/foodstore/PaymentCheckView2.vue'
+import PaymentCheckView3 from '@/views/foodstore/PaymentCheckView3.vue'
 
 const routes = [
   {
@@ -103,6 +104,11 @@ const routes = [
     path: '/foodstore/paymentform',
     name: 'PaymentCheckView2',
     component: PaymentCheckView2
+  },
+  {
+    path: '/foodstore/paymentform03',
+    name: 'PaymentCheckView3',
+    component: PaymentCheckView3
   },
   
 ]

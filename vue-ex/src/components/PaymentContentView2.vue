@@ -23,7 +23,7 @@
             <div class="barcode-wrapper">
               <img src="../assets/qrimages.png" class="barcode">
             </div>
-            <div class="home">
+            <div>
               <router-link to="/" id="return-button">돌아가기</router-link>
             </div>
           </div>
@@ -43,7 +43,7 @@ import axios from 'axios';
 import "@/assets/css/PaymentContent2View.css";
 
 export default {
-  name: "ContentView",
+  name: "PaymentContent2View",
   components: {},
   props: {
     f_r_no: Number

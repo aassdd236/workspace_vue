@@ -43,10 +43,11 @@
                             <PointUseContentView></PointUseContentView>
                         </ModalView>
 
-                        <router-link to="/foodstore/paymentform">
-                            <div class="point-method" @click="calculateTotalPrice; isModalViewed = false">
-                                적용하기</div>
+                        
 
+                        <router-link to="/foodstore/paymentform03">
+                            <div class="point-method" @click="calculateTotalPrice">
+                                적용하기</div>
                         </router-link>
 
 
@@ -68,7 +69,7 @@ import PointUseContentView from '@/components/PointUseContentView.vue';
 
 
 export default {
-    name: "PointUseView",
+    name: "PointCheckContent2View",
     components: {
         ModalView,
         PointUseContentView
@@ -76,7 +77,7 @@ export default {
     data() {
         return {
             isModalViewed: false,
-            money: ''
+            money: 0
         };
     },
     computed: {
@@ -86,10 +87,20 @@ export default {
     },
     methods: {
         calculateTotalPrice() {
-            const totalPrice = this.totalPrice - this.money;
-            this.$store.commit('setTotalPrice', totalPrice);
-            /* 나중에 확인하기 */
-        },
+            console.log("클릭");
+
+            let money = parseInt(this.money);
+
+            console.log(typeof this.money);
+            console.log(this.money);
+        
+            let pointEx = this.$store.state.usePoint - this.money;
+            this.$store.commit('setMoney', money);
+            this.$store.commit('setPointEx', pointEx);
+
+            this.isModalViewed = false;
+        }
+
 
     }
 };

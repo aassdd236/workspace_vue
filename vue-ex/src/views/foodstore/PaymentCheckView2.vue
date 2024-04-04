@@ -38,7 +38,6 @@
 
             </div>
             <!-- //container  -->
-            <AppFooter />
             <!-- //footer -->
         </div>
         <!-- //wrap -->
@@ -49,14 +48,12 @@
 import axios from 'axios';
 import "@/assets/css/PaymentCheckView.css";
 import AppHeader from "@/components/AppHeader.vue"
-import AppFooter from "@/components/AppFooter.vue"
 import ModalView from "@/components/ModalView.vue";
 import PaymentContentView from '@/components/PaymentContentView.vue';
 
 export default {
     name: "FoodstoreView",
     components: {
-        AppFooter,
         AppHeader,
         ModalView,
         PaymentContentView

@@ -8,7 +8,7 @@
                     <div id="pointInfo">
                         <div id="pointInput">
                             <div id="check-hp">
-                                <input type="text" v-model="phoneNumber" placeholder="010-0000-0000">
+                                <input type="text" v-model="phoneNumber" >
                             </div>
                             <div id="birth">
                                 <input type="text" v-model="dateInput" placeholder="YYYYMMDD">
@@ -18,7 +18,7 @@
                             <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
                                 <PointCheckContent2View></PointCheckContent2View>
                             </ModalView>
-                            <button id="search-button" @click="getPoint">포인트조회</button>
+                            <button id="search-button02" @click="getPoint">포인트조회</button>
                         </div>
                     </div>
                 </div>
@@ -41,10 +41,9 @@
                 </div>
 
                 <div>
-                    <router-link to="/ticket/choosepoint2" id="return-button">돌아가기</router-link>
+                    <router-link to="/foodstore/choosepoint2" id="return-button">돌아가기</router-link>
                 </div>
             </div>
-            <AppFooter />
         </div>
     </div>
 </template>
@@ -53,7 +52,6 @@
 import axios from 'axios';
 import "@/assets/css/PointUse2.css";
 import AppHeader from "@/components/AppHeader.vue"
-import AppFooter from "@/components/AppFooter.vue"
 import ModalView from "@/components/ModalView.vue";
 import PointCheckContent2View from "@/components/PointCheckContent2View.vue";
 
@@ -61,14 +59,13 @@ export default {
     name: "PointUse2",
     components: {
         AppHeader,
-        AppFooter,
         ModalView,
         PointCheckContent2View,
     },
     data() {
         return {
             isModalViewed: false,
-            phoneNumber: '',
+            phoneNumber: '010',
             dateInput: '',
             reservationNumber: '',
         };

@@ -29,7 +29,6 @@
 
             </div>
 
-            <AppFooter />
 
         </div>
     </div>
@@ -40,12 +39,10 @@
 //import axios from 'axios';
 import "@/assets/css/ChoosePoint2.css";
 import AppHeader from "@/components/AppHeader.vue"
-import AppFooter from "@/components/AppFooter.vue"
 
 export default {
     name: "ChoosePoint2View",
     components: {
-        AppFooter,
         AppHeader,
     },
     data() {

@@ -18,8 +18,6 @@
                 </div>
             </div>
 
-            <AppFooter />
-
         </div>
     </div>
 </template>
@@ -28,12 +26,10 @@
 <script>
 import "@/assets/css/EndPoint2.css";
 import AppHeader from "@/components/AppHeader.vue"
-import AppFooter from "@/components/AppFooter.vue"
 
 export default {
     name: "EndPointView2",
     components: {
-        AppFooter,
         AppHeader,
     },
     data() {

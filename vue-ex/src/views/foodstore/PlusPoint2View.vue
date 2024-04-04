@@ -45,8 +45,6 @@
                 </div>
             </div>
 
-            <AppFooter />
-
         </div>
     </div>
 </template>
@@ -55,17 +53,15 @@
 import axios from 'axios';
 import "@/assets/css/PlusPoint2View.css"
 import AppHeader from '@/components/AppHeader.vue';
-import AppFooter from '@/components/AppFooter.vue';
 
 export default {
     name: "PlusPoint2View",
     components: {
         AppHeader,
-        AppFooter,
     },
     data() {
         return {
-            phoneNumber: "",
+            phoneNumber: "010",
             dataInput: "",
             point: "",
             plusPoint: ""

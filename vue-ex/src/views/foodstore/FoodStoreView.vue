@@ -51,7 +51,6 @@
                 <!-- //content  -->
             </div>
             <!-- //container  -->
-            <AppFooter />
             <!-- //footer -->
         </div>
         <!-- //wrap -->
@@ -62,12 +61,10 @@
 import axios from 'axios';
 import "@/assets/css/FoodStore.css";
 import AppHeader from "@/components/AppHeader.vue"
-import AppFooter from "@/components/AppFooter.vue"
 
 export default {
     name: "FoodstoreView",
     components: {
-        AppFooter,
         AppHeader,
     },
     data() {

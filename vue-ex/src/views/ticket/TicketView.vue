@@ -64,7 +64,6 @@
       </div>
       <!-- //container  -->
 
-      <AppFooter />
       <!-- //footer -->
     </div>
     <!-- //wrap -->
@@ -74,7 +73,6 @@
 <script>
 import "@/assets/css/TicketView.css";
 import AppHeader from "@/components/AppHeader.vue";
-import AppFooter from "@/components/AppFooter.vue";
 import ModalView from "@/components/ModalView.vue";
 import SeatContentView from "@/components/SeatContentView.vue";
 import axios from "axios";
@@ -82,7 +80,6 @@ import axios from "axios";
 export default {
   name: "TicketView",
   components: {
-    AppFooter,
     AppHeader,
     ModalView,
     SeatContentView,

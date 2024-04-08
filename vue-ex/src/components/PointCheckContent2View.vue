@@ -12,9 +12,8 @@
                     <h1>포인트 사용</h1>
                     <div class="point-info">
                         <p class="total-price">총 금액: {{ $store.state.totalPrice }}원</p>
-                        <p class="total-price">사용가능포인트: {{ $store.state.usePoint }}원</p>
-                        <p class="total-price">사용포인트: <input type="text" v-model="money" placeholder=""> p</p>
-                        <p class="total-price">총 금액: {{ $store.state.totalPrice }}원</p>
+                        <p class="total-price">사용 가능 포인트: {{ $store.state.usePoint }}원</p>
+                        <p class="total-price">사용 포인트: <input type="text" v-model="money" placeholder=""> p</p>
 
                         <ModalView v-if="isModalViewed" @close-modal="isModalViewed = false">
                             <PointUseContentView></PointUseContentView>

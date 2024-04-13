@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html long="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .wrap {
+            width: 1300px;
+            height: 100px;
+            margin: 0px auto;
+        }
+
+        .header {
+            display: flex;
+            background-color: #6bcbff;
+        }
+
+        .header>h1 {
+            color: #fff;
+            float: left;
+        }
+
+        .infoContentA {
+            display: flex;
+            margin-top: 50px;
+        }
+
+        /* 상품정보 */
+        .infoContentA>img {
+            display: block;
+            margin: 0px 30px 30px 10px;
+            width: 550px;
+            border-radius: 30px;
+        }
+
+        .productInfo {
+            float: left;
+        }
+
+        .productName {
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .productStar {
+            margin: 10px 0px 0px 0px;
+        }
+
+        .productStar>a {
+            text-decoration-line: none;
+        }
+
+        .productStar>a>img {
+            width: 20px;
+        }
+
+        .productStar>a>span {
+            font-size: 15px;
+            font-weight: bold;
+            color: #6bcbff;
+        }
+
+        .productPrice {
+            margin-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #acacac;
+        }
+
+        .productPrice>span:first-child {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .productPrice>span:nth-child(2) {
+            font-size: 20px;
+        }
+
+        .productContent {
+            width: 300px;
+            height: auto;
+        }
+
+        .productContent>select {
+            width: 492px;
+            height: 50px;
+            margin-top: 20px;
+            padding-left: 8px;
+            border: 1px solid #acacac;
+            border-radius: 7px;
+        }
+
+        /* 장바구니 */
+        .miniCart {
+            background-color: #eaf1f5;
+            width: 477px;
+            min-height: 100px;
+            /* 선택된 상품과 버튼 그룹의 높이를 적절히 조절 */
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            /* 내부 요소들을 세로로 배열 */
+            align-items: flex-start;
+            /* 선택된 상품과 버튼 그룹을 왼쪽에 정렬 */
+        }
+
+        .selectedProduct {
+            margin-bottom: 10px;
+            /* 선택된 상품 아래 여백 추가 */
+        }
+
+        .deleteCart {
+            margin-left: auto;
+            /* 엑스를 오른쪽으로 이동 */
+            color: #acacac;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .countBtn {
+            margin-top: auto;
+            /* 버튼 그룹을 아래로 이동 */
+            display: flex;
+            align-items: center;
+        }
+
+        .countBtn button {
+            width: 30px;
+            /* 버튼 너비 조정 */
+            margin-left: 5px;
+            /* 버튼 사이의 간격 추가 */
+            margin-right: 5px;
+            /* 버튼 사이의 간격 추가 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <h1>header</h1>
+        </div><!-- header -->
+
+        <div class="infoContentA">
+            <img src="../assets/images/test.png" alt="">
+
+            <div class="productInfo">
+                <h1 class="productName">상품명 (상품코드 블라블라)</h1>
+                <div class="productStar">
+                    <a href="">
+                        <div>
+
+                        </div>
+                        <img src="../assets/images/star.png" alt="">
+                        <img src="../assets/images/star.png" alt="">
+                        <img src="../assets/images/star.png" alt="">
+                        <img src="../assets/images/star.png" alt="">
+                        <img src="../assets/images/star.png" alt="">
+                        <span>2개 리뷰</span>
+                    </a>
+                </div>
+                <div class="productPrice">
+                    <span>32,000</span>
+                    <span>원</span>
+                </div>
+                <div class="productContent">
+                    <select name="" id="">
+                        <option disabled selected>옵션을 선택해주세요</option>
+                        <option value="">상품1</option>
+                        <option value="">상품2</option>
+                    </select>
+                    <div class="miniCart">
+                        <span>선택된 상품</span>
+                        <span class="deleteCart">x</span>
+
+                        <div class="countBtn">
+                            <button>+</button>
+                            <span>0</span>
+                            <button>-</button>
+                        </div>
+                    </div><!-- miniCart -->
+                    <div class="">
+                        <button type="button">장바구니</button>
+                        <button type="button">결제하기</button>
+                    </div>
+                </div>
+            </div><!-- productInfo -->
+        </div><!-- info-content-a -->
+
+        <div class="infoContentB">
+
+        </div><!-- info-content-b -->
+
+    </div><!-- wrap -->
+
+</body>
+
+</html>
